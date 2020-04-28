@@ -1,0 +1,63 @@
+<h1>Dados Cadastrais</h1>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">
+
+  <div class="col-md-3">
+    <div class="text-center">
+      <img src="../../assets/images/{{cartService.userID}}.jpg" class="avatar img-circle" alt="avatar" style="display: block; width: 70px;">
+      <p></p>
+    </div>
+  </div>
+
+  <div>
+    <label for="fisrtName">
+      Nome
+    </label>
+    <input id="firstName" type="text" formControlName="firstName">
+  </div>
+
+  <div>
+    <label for="lastName">
+      Sobrenome
+    </label>
+    <input id="lastName" type="text" formControlName="lastName">
+  </div>
+
+  <div>
+    <label for="company">
+      Empresa
+    </label>
+    <input id="company" type="text" formControlName="company">
+  </div>
+
+  <div>
+    <label for="mail">
+      Email
+    </label>
+    <input id="mail" type="text" formControlName="mail">
+  </div>
+
+
+
+
+  <table>
+  <tr>
+    <td>
+      <button class="button" type="submit">Salvar</button>
+    </td>
+    <td>
+       <a [routerLink]="['/productList']">
+       <button class="button">Voltar</button>
+      </a>
+    </td>
+
+
+
+
+  </tr>
+
+  </table>
+
+
+</form>
+

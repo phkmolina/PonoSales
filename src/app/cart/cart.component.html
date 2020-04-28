@@ -1,0 +1,105 @@
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+
+<table width=100%>
+<tr>
+  <th width='40%' align='left'>Produto</th>
+  <th width='20%' align='right'>Qtd.</th>
+  <th width='20%' align='right'>Valor</th>
+  <th width='20%' align='right'></th>
+</tr>
+<tr *ngFor="let item of items">
+  <td width='60%' align='left'>{{ item.name }} </td>
+  <td width='60%' align='left'>{{ item.quant }} </td>
+  <td width='20%' align='right'>{{ item.price | currency }}</td>
+  <td width='20%' align='right'>
+       <button class="button" (click)="remFromCart(item)">Remover</button>
+  </td>
+
+</tr>
+</table>
+
+<p>
+
+</p>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Nome
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="address">
+      Endereço
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <div>
+    <label for="address">
+      Data de entrega
+    </label>
+    <input id="dataEnt" type="datetime-local" formControlName="dataEnt">
+  </div>
+
+  <div>
+    <label for="phone">
+      Telefone
+    </label>
+    <input id="phone" type="tel" formControlName="phone">
+  </div>
+
+  <div>
+    <label for="mail">
+      E-mail
+    </label>
+    <input id="mail" type="email" formControlName="mail">
+  </div>
+
+  <div>
+    <label for="mail">
+      Frete
+    </label>
+    <select name="frete" id="frete">
+    <option value="0" selected>Selecionar o frete</option>
+    <option *ngFor="let shipping of shippingCosts | async">
+      <span>{{ shipping.type }} - {{ shipping.price | currency:'BRL':true }}</span>
+    </select>
+  </div>
+
+
+  <table>
+  <tr>
+    <td>
+      <button class="button" type="submit">Finalizar Compra</button>
+    </td>
+    <td>
+       <a [routerLink]="['/productList']">
+       <button class="button">Voltar</button>
+      </a>
+    </td>
+
+
+
+
+  </tr>
+
+  </table>
+
+
+</form>

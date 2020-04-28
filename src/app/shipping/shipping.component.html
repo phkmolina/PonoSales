@@ -1,0 +1,9 @@
+<h3>Frete - Preço</h3>
+
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <span>{{ shipping.type }}</span>
+  <span>{{ shipping.price | currency:'BRL':true }}</span>
+</div>
+<a [routerLink]="['/']">
+<button class="button">Voltar</button>
+</a>

@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div *ngFor="let product of products; index as productId" class="column">
+    <div class="card">
+      <a img align="center" [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+            <img align="left" src={{product.image}} alt="img" width="100" border="0" style="display: block; width: '90%'" />
+            <h3 align="center">{{ product.name }} </h3>
+            <p>{{ product.price | currency:'BRL':true }}/Kg</p>
+      </a>
+    </div>
+  </div>
+</div>
+

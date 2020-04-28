@@ -1,0 +1,31 @@
+
+<img align=left src='../../assets/images/Logo.jpg' alt="img" width="100" border="0" style="display: block; width: 70px;" />
+<h1 align =left *ngIf="!cartService.isLogged"></h1>
+
+<table *ngIf="cartService.isLogged">
+  <td>
+    <a  [routerLink]="['/productList']" class="button fancy-button"><i
+      class="material-icons">home</i></a>
+  </td>
+  <td>
+    <a  [routerLink]="['/perfil']" class="button fancy-button"><i
+      class="material-icons">people_outline</i></a>
+  </td>
+  <td *ngIf="cartService.nCount>0" >
+      <a [routerLink]="['/cart']" class="button fancy-button"><i
+      class="material-icons">shopping_cart</i>  {{ cartService.nCount }} </a>
+  </td>
+
+</table>
+<td *ngIf="cartService.isLogged">
+    <a [routerLink]="['/']" class="button fancy-button"><i
+      class="material-icons">exit_to_app</i></a>
+</td>
+
+
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
