@@ -3,14 +3,14 @@
 <h1 align =left *ngIf="!cartService.isLogged"></h1>
 
 <table *ngIf="cartService.isLogged">
-  <td>
+<!--  <td>
     <a  [routerLink]="['/productList']" class="button fancy-button"><i
       class="material-icons">home</i></a>
-  </td>
-  <td>
+  </td>-->
+  <!--<td>
     <a  [routerLink]="['/perfil']" class="button fancy-button"><i
       class="material-icons">people_outline</i></a>
-  </td>
+  </td>-->
   <td *ngIf="cartService.nCount>0" >
       <a [routerLink]="['/cart']" class="button fancy-button"><i
       class="material-icons">shopping_cart</i>  {{ cartService.nCount }} </a>
@@ -19,7 +19,7 @@
 </table>
 <td *ngIf="cartService.isLogged">
     <a [routerLink]="['/']" class="button fancy-button"><i
-      class="material-icons">exit_to_app</i></a>
+      class="material-icons">home</i></a>
 </td>
 
 

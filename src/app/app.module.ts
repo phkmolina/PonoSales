@@ -33,7 +33,8 @@ import { GraphQLModule } from './graphql.module';
     FormsModule,
     MaterialModule,
     RouterModule.forRoot([
-      { path: '', component: LoginComponent },
+      //{ path: '', component: LoginComponent },
+      { path: '', component: ProductListComponent },
       { path: 'productList', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },

@@ -22,11 +22,11 @@ export class CartService {
 
   addToCart(product) {
     this.items.push(product);
-    this.cartPrice =  this.cartPrice + (product.price);
+    this.cartPrice =  this.cartPrice + (product.price * product.quant);
   }
 
   remFromCart(product){
-    this.cartPrice =  this.cartPrice - product.price;
+    this.cartPrice =  this.cartPrice - (product.price*product.quant);
     this.nCount = this.nCount - 1;
     this.items.splice(this.items.indexOf(product), 1);
   }

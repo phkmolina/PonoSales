@@ -9,6 +9,12 @@ body {
 /* Float four columns side by side */
 .column {
   float: left;
+  width: 20%;
+  padding: 10px 10px;
+}
+/* Float four columns side by side */
+.columngroup {
+  float: left;
   width: 25%;
   padding: 10px 10px;
 }
@@ -34,6 +40,18 @@ body {
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 5px;
+    padding: 0px 0px;
+  }
+  .columngroup {
+    width: 25%;
+    display: block;
+    margin-bottom: 5px;
+    padding: 0px 0px;
+  }
+  .columnlaoding {
     width: 100%;
     display: block;
     margin-bottom: 5px;
